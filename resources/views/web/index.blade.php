@@ -24,7 +24,7 @@
         <img src="/img/pics/home.jpg" class="img-fluid">
       </div>
       <div class="col-sm-6">
-        <h1 class="title"><span>Bienvenido a,</span>Moderno Americano</span>Virtual y a distancia.</span></h1>
+        <h1 class="title"><span>Bienvenido a, </span>Moderno Americano <span>Virtual y a distancia.</span></h1>
         <p>La plataforma del Instituto Moderno Americano (IMA) Virtual y a distancia, te permite continuar tus estudios en educación básica y media desde cualquier lugar, apoyate en la comunidad para crear un proyecto de vida profesional y crecer en tu vida.</p>
         <p class="text-center">
           <a href="#" class="btn btn-danger btn-lg"><i class="fa fa-google"></i> Ingresar con mi cuenta <br>@ma.edu.co</a><br>
