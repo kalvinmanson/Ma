@@ -21,7 +21,7 @@ class CourseController extends Controller
       $slug = str_slug($request->name);
       $validate = Course::where('slug', $slug)->get();
       if(count($validate) > 0) {
-        $slug = $slug . '-' . count($validate);
+        $slug = $slug . '-' . rand(100,999);
       }
 
       $course = new Course;
