@@ -19,13 +19,15 @@ class ContentController extends Controller
     }
     public function create($grade, $course)
     {
+      $grade = Grade::where('slug', $grade)->first();
+      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+
       //validar permisos
       if(!Gate::allows('admin-course', $course)) {
         flash('No tienes permisos para realizar esta accion')->error();
         return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
       }
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+      
       return view('aula.contents.create', compact('course'));
     }
     public function store($grade, $course, Request $request)
