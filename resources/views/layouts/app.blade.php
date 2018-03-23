@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"  content="@yield('meta-keywords')">
     <meta name="description"  content="@yield('meta-description')" />
+    <meta name="google-site-verification" content="ewO4x0NlUGO9gNkFMxcXPhUPPKHrWKPFbSruverP7tc" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
