@@ -11,7 +11,7 @@
         <a href="/g/{{ $enrollment->course->grade->slug }}/c/{{ $enrollment->course->slug }}" class="card bg-dark text-white">
           <div class="card-body">
             <img src="{{ $enrollment->course->picture or '/img/no-course-pic.png'}}" class="img-fluid float-left w-25 mr-2">
-            <h4>{{ $enrollment->course->name }}</h4>
+            <h5>{{ $enrollment->course->name }}</h5>
             <small>{{ $enrollment->course->grade->name }}</small>
           </div>
         </a>
