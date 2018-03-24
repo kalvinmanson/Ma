@@ -27,7 +27,7 @@ class ContentController extends Controller
         flash('No tienes permisos para realizar esta accion')->error();
         return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
       }
-      
+
       return view('aula.contents.create', compact('course'));
     }
     public function store($grade, $course, Request $request)
@@ -42,7 +42,8 @@ class ContentController extends Controller
       }
 
       $this->validate(request(), [
-        'name' => ['required', 'min:30']
+        'name' => ['required', 'min:20'],
+        'description' => ['required', 'min:50', 'max:250']
       ]);
 
       $content = new Content;
@@ -52,7 +53,7 @@ class ContentController extends Controller
       $slug = str_slug($request->name);
       $validate = Content::where('slug', $slug)->get();
       if(count($validate) > 0) {
-          $slug = $slug . '-' . count($validate);
+          $slug = $slug . '-' . rand(1000,9999);
       }
       $content->slug = $slug;
       $content->description = $request->description;
@@ -70,6 +71,6 @@ class ContentController extends Controller
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
       $content = Content::where('slug', $slug)->where('course_id', $course->id)->first();
 
-      return view('aula/contents/show', compact('content'));
+      return view('aula/contents/show', compact('content', 'course'));
     }
 }

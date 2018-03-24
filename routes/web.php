@@ -47,6 +47,7 @@ Route::get('g/{grade}/c/{slug}', 'CourseController@show')->where('grade', '[a-z,
 Route::get('g/{grade}/c/{course}/contents', 'ContentController@index')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::post('g/{grade}/c/{course}/contents', 'ContentController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/contents/create', 'ContentController@create')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
+Route::get('g/{grade}/c/{course}/contents/{slug}', 'ContentController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 // Posts
 Route::post('g/{grade}/c/{course}/post', 'PostController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->middleware('auth');
 
