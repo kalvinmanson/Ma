@@ -20,7 +20,7 @@ class CreateActivitiesTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->string('description')->nullable();
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->float('rank')->default(0);
             $table->boolean('active')->default(false);
             $table->timestamps();

@@ -24,7 +24,7 @@ class CreateContactsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('document')->nullable();
             $table->string('subject')->nullable();
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->text('answer')->nullable();
             $table->boolean('subscribed')->default(false);
             $table->timestamps();

@@ -21,7 +21,7 @@ class CreateContentsTable extends Migration
             $table->string('slug')->unique();
             $table->string('picture')->nullable();
             $table->string('description')->nullable();
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->integer('weight')->default(100);
             $table->float('rank')->default(0);
             $table->timestamps();

@@ -17,7 +17,7 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->default(0);
             $table->integer('to_user_id')->default(0);
-            $table->text('content');
+            $table->text('fullcontent');
             $table->boolean('readed')->default(false);
             $table->timestamps();
         });

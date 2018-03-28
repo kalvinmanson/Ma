@@ -19,7 +19,7 @@ class CreateFieldsTable extends Migration
             $table->integer('page_id')->default(0);
             $table->string('format')->default('Simple');
             $table->string('name')->default('no-field');
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->timestamps();
         });
     }

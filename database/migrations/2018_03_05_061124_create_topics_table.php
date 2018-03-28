@@ -20,7 +20,7 @@ class CreateTopicsTable extends Migration
             $table->integer('user_id')->default(0);
             $table->string('name');
             $table->string('slug')->unique();
-            $table->text('content');
+            $table->text('fullcontent');
             $table->float('rank')->default(0);
             $table->boolean('solved')->default(false);
             $table->timestamps();

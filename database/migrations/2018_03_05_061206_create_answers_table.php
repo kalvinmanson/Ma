@@ -18,7 +18,7 @@ class CreateAnswersTable extends Migration
             $table->integer('activity_id')->default(0);
             $table->integer('user_id')->default(0);
             $table->string('attached')->nullable();
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->float('result')->nullable();
             $table->float('questions_result')->nullable();
             $table->timestamps();

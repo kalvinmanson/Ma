@@ -10,4 +10,12 @@ class Content extends Model
   {
       return $this->belongsTo('App\Course');
   }
+  public function activities()
+  {
+      return $this->hasMany('App\Activity');
+  }
+  public function topics()
+  {
+      return $this->hasMany('App\Topic');
+  }
 }

@@ -17,7 +17,7 @@ class CreateRepliesTable extends Migration
             $table->increments('id');
             $table->integer('topic_id')->default(0);
             $table->integer('user_id')->default(0);
-            $table->text('content');
+            $table->text('fullcontent');
             $table->float('rank')->default(0);
             $table->timestamps();
         });

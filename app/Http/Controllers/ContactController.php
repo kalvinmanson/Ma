@@ -13,7 +13,7 @@ class ContactController extends Controller
     {
         $this->validate(request(), [
             'subject' => ['required', 'max:200'],
-            'content' => ['required', 'max:200']
+            'fullcontent' => ['required', 'max:200']
         ]);
 
         if(!Auth::check()) {

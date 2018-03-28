@@ -20,7 +20,7 @@ class CreateQuestionsTable extends Migration
             $table->string('slug')->unique();
             $table->string('picture')->nullable();
             $table->string('description')->nullable();
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->string('option_a');
             $table->string('option_b');
             $table->string('option_c');

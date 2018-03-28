@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 use App\Grade;
 use App\Course;
 use App\Content;
+use App\Activity;
 use Gate;
 use Auth;
 
 use Illuminate\Http\Request;
 
-class ContentController extends Controller
+class ActivityController extends Controller
 {
     public function index($grade, $course)
     {
       $grade = Grade::where('slug', $grade)->first();
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      return view('aula.contents.index', compact('course'));
+      return view('aula.activities.index', compact('course'));
     }
     public function create($grade, $course)
     {
@@ -28,7 +29,7 @@ class ContentController extends Controller
         return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
       }
 
-      return view('aula.contents.create', compact('course'));
+      return view('aula.activities.create', compact('course'));
     }
     public function store($grade, $course, Request $request)
     {
@@ -46,31 +47,31 @@ class ContentController extends Controller
         'description' => ['required', 'min:50', 'max:250']
       ]);
 
-      $content = new Content;
-      $content->course_id = $course->id;
-      $content->name = $request->name;
+      $activity = new Activity;
+      $activity->course_id = $course->id;
+      $activity->content_id = $request->content_id;
+      $activity->name = $request->name;
       //Validar unico slug
       $slug = str_slug($request->name);
       $validate = Content::where('slug', $slug)->get();
       if(count($validate) > 0) {
           $slug = $slug . '-' . rand(1000,9999);
       }
-      $content->slug = $slug;
-      $content->description = $request->description;
-      $content->picture = $request->picture;
-      $content->fullcontent = $request->fullcontent;
-      $content->save();
+      $activity->slug = $slug;
+      $activity->description = $request->description;
+      $activity->fullcontent = $request->fullcontent;
+      $activity->save();
 
-      flash('Contenido Agregado')->success();
-      return redirect()->action('ContentController@index', [$grade->slug, $course->slug]);
+      flash('Actividad Agregada')->success();
+      return redirect()->action('ActivityController@index', [$grade->slug, $course->slug]);
 
     }
     public function show($grade, $course, $slug)
     {
       $grade = Grade::where('slug', $grade)->first();
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      $content = Content::where('slug', $slug)->where('course_id', $course->id)->first();
+      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
 
-      return view('aula/contents/show', compact('content', 'course'));
+      return view('aula/activities/show', compact('activity', 'course'));
     }
 }

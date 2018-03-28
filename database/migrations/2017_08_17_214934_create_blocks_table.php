@@ -19,7 +19,7 @@ class CreateBlocksTable extends Migration
             $table->string('format')->default('Simple');
             $table->string('picture')->nullable();
             $table->text('description')->nullable();
-            $table->text('content')->nullable();
+            $table->text('fullcontent')->nullable();
             $table->integer('weight')->default(0);
             $table->string('link')->default('#');
             $table->text('style')->nullable();
