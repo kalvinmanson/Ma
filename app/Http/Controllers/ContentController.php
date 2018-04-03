@@ -73,4 +73,18 @@ class ContentController extends Controller
 
       return view('aula/contents/show', compact('content', 'course'));
     }
+    public function edit($grade, $course, $slug)
+    {
+      $grade = Grade::where('slug', $grade)->first();
+      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+      $content = Content::where('slug', $slug)->where('course_id', $course->id)->first();
+
+      //validar permisos
+      if(!Gate::allows('admin-course', $course)) {
+        flash('No tienes permisos para realizar esta accion')->error();
+        return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
+      }
+
+      return view('aula/contents/edit', compact('content', 'course'));
+    }
 }
