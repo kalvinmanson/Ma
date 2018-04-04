@@ -14,4 +14,8 @@ class Activity extends Model
   {
       return $this->belongsTo('App\Content');
   }
+  public function answers()
+  {
+      return $this->hasMany('App\Answer');
+  }
 }

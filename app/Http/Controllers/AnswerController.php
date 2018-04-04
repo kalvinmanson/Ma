@@ -5,20 +5,21 @@ use App\Grade;
 use App\Course;
 use App\Content;
 use App\Activity;
+use App\Answer;
 use Gate;
 use Auth;
 
 use Illuminate\Http\Request;
 
-class ActivityController extends Controller
+class AnswerController extends Controller
 {
-    public function index($grade, $course)
+    public function index($grade, $course, $activity)
     {
       $grade = Grade::where('slug', $grade)->first();
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
       return view('aula.activities.index', compact('course'));
     }
-    public function create($grade, $course)
+    public function create($grade, $course, $activity)
     {
       $grade = Grade::where('slug', $grade)->first();
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();

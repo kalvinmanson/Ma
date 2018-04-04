@@ -12,9 +12,9 @@ Preguntas
 
 Homepage *
 Register *
-Editar Contents
-Editar Activities (campos)
-Responder Activities
+Editar Contents *
+Editar Activities (campos) *
+Responder Activities *
 Calificar Activities
 Forum
 Preguntas

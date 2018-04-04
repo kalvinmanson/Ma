@@ -21,8 +21,8 @@
     </div>
     <div class="col-3 col-md-2">
       <div class="form-group">
-        <label for="content_id">Estado</label>
-        <select name="content_id" id="content_id" class="form-control">
+        <label for="active">Estado</label>
+        <select name="active" id="active" class="form-control">
           <option value="0">Inactiva</option>
           <option value="1">Activa</option>
         </select>
@@ -46,7 +46,7 @@
     </script>
   </div>
 
-  <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Crear nuevo contenido</button>
+  <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Crear nueva actividad</button>
 
   </form>
 </div>

@@ -11,6 +11,10 @@
         <p><a href="/g/{{ $activity->course->grade->slug }}/c/{{ $activity->course->slug }}/activities/{{ $activity->slug }}/edit">Editar</a></p>
       @endif
       {!! $activity->fullcontent !!}
+      <hr>
+      @if(Gate::allows('use-course', $course))
+        @include('partials.aula.answerCreate', ['activity' => $activity])
+      @endif
     </div>
     <div class="col-sm-4">
       <h4 class="bg-secondary p-2 text-white">Contenido</h4>
