@@ -74,4 +74,12 @@ class ActivityController extends Controller
 
       return view('aula/activities/show', compact('activity', 'course'));
     }
+    public function edit($grade, $course, $slug)
+    {
+      $grade = Grade::where('slug', $grade)->first();
+      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
+
+      return view('aula/activities/edit', compact('activity', 'course'));
+    }
 }

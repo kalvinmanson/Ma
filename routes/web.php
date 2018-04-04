@@ -48,12 +48,15 @@ Route::get('g/{grade}/c/{course}/contents', 'ContentController@index')->where('g
 Route::post('g/{grade}/c/{course}/contents', 'ContentController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/contents/create', 'ContentController@create')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/contents/{slug}/edit', 'ContentController@edit')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+Route::post('g/{grade}/c/{course}/contents/{slug}', 'ContentController@update')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/contents/{slug}', 'ContentController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 
 //Activities
 Route::get('g/{grade}/c/{course}/activities', 'ActivityController@index')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::post('g/{grade}/c/{course}/activities', 'ActivityController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/activities/create', 'ActivityController@create')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
+Route::get('g/{grade}/c/{course}/activities/{slug}/edit', 'ActivityController@edit')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+Route::post('g/{grade}/c/{course}/activities/{slug}', 'ActivityController@update')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/activities/{slug}', 'ActivityController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 
 // Posts

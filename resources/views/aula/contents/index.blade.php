@@ -21,9 +21,6 @@
             <h5 class="card-title">{{ $content->name }}</h5>
           </a>
           <p class="card-text">{{ $content->description }}.</p>
-          @if(Gate::allows('admin-course', $course))
-            <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/contents/{{ $content->slug }}/edit">Editar</a>
-          @endif
         </div>
       </div>
     </div>

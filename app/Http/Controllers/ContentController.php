@@ -49,6 +49,7 @@ class ContentController extends Controller
       $content = new Content;
       $content->course_id = $course->id;
       $content->name = $request->name;
+      $content->weight = $request->weight;
       //Validar unico slug
       $slug = str_slug($request->name);
       $validate = Content::where('slug', $slug)->get();
@@ -86,5 +87,33 @@ class ContentController extends Controller
       }
 
       return view('aula/contents/edit', compact('content', 'course'));
+    }
+    public function update($grade, $course, $slug, Request $request)
+    {
+      $grade = Grade::where('slug', $grade)->first();
+      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+      $content = Content::where('slug', $slug)->where('course_id', $course->id)->first();
+
+      //validar permisos
+      if(!Gate::allows('admin-course', $course)) {
+        flash('No tienes permisos para realizar esta accion')->error();
+        return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
+      }
+
+      $this->validate(request(), [
+        'name' => ['required', 'min:20'],
+        'description' => ['required', 'min:50', 'max:250']
+      ]);
+
+      $content->name = $request->name;
+      $content->weight = $request->weight;
+      $content->description = $request->description;
+      $content->picture = $request->picture;
+      $content->fullcontent = $request->fullcontent;
+      $content->save();
+
+      flash('Contenido Actualizado')->success();
+      return redirect()->action('ContentController@index', [$grade->slug, $course->slug]);
+
     }
 }

@@ -7,6 +7,9 @@
   <h1 class="bg-secondary p-2 text-white">{{ $content->name }}</h1>
   <div class="row">
     <div class="col-sm-8">
+      @if(Gate::allows('admin-course', $course))
+        <p><a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/contents/{{ $content->slug }}/edit">Editar</a></p>
+      @endif
       {!! $content->fullcontent !!}
     </div>
     <div class="col-sm-4">

@@ -13,7 +13,8 @@ Preguntas
 Homepage *
 Register *
 Editar Contents
-Editar Activities
+Editar Activities (campos)
 Responder Activities
 Calificar Activities
-forum
+Forum
+Preguntas
