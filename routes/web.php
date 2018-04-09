@@ -29,6 +29,8 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->middleware('auth')->gr
 
 Route::resource('categories', 'CategoryController');
 
+Route::get('login/google', 'Auth\LoginController@redirectToProvider');
+Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
 Auth::routes();
 
 Route::get('/home', 'WebController@index')->name('home');

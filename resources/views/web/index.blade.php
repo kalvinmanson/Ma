@@ -27,7 +27,7 @@
         <h1 class="title"><span>Bienvenido a, </span>Moderno Americano <span>Virtual y a distancia.</span></h1>
         <p>La plataforma del Instituto Moderno Americano (IMA) Virtual y a distancia, te permite continuar tus estudios en educación básica y media desde cualquier lugar, apoyate en la comunidad para crear un proyecto de vida profesional y crecer en tu vida.</p>
         <p class="text-center">
-          <a href="/login" class="btn btn-primary btn-lg"><i class="fa fa-google"></i> Ingresar</a><br>
+          <a href="/login/google" class="btn btn-primary btn-lg"><i class="fa fa-google"></i> Ingresar</a><br>
           <a href="#">No se cual es mi cuenta</a><br>
           <a href="#">Quiero matricularme</a>
         </p>
