@@ -1,6 +1,12 @@
-@if($activity->answers->where('user_id', Auth::user()->id)->count() > 0)
+<?php $myAnswers = $activity->answers->where('user_id', Auth::user()->id); ?>
+@if($myAnswers->count() > 0)
+  <h5>Respuesta enviada:</h5>
+  @foreach($myAnswers as $myAnswer)
+  <p>Adjunto: {{ $myAnswer->attached }}</p>
+  {!! $myAnswer->fullcontent !!}
+  @endforeach
 @else
-<form method="POST" action="{{ url('/g/'.$activity->course->grade->slug.'/c/'.$activity->course->slug.'/activity/'.$activity->slug.'/answer') }}">
+<form method="POST" action="{{ url('/g/'.$activity->course->grade->slug.'/c/'.$activity->course->slug.'/activities/'.$activity->slug.'/answer') }}">
   {{ csrf_field() }}
   <div class="form-group">
       <label for="attached">Adjuntar Archivo</label>

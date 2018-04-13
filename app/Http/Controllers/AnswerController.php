@@ -19,53 +19,33 @@ class AnswerController extends Controller
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
       return view('aula.activities.index', compact('course'));
     }
-    public function create($grade, $course, $activity)
+
+    public function store($grade, $course, $slug, Request $request)
     {
       $grade = Grade::where('slug', $grade)->first();
       $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
 
       //validar permisos
-      if(!Gate::allows('admin-course', $course)) {
-        flash('No tienes permisos para realizar esta accion')->error();
-        return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
-      }
-
-      return view('aula.activities.create', compact('course'));
-    }
-    public function store($grade, $course, Request $request)
-    {
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-
-      //validar permisos
-      if(!Gate::allows('admin-course', $course)) {
+      if(!Gate::allows('use-course', $course)) {
         flash('No tienes permisos para realizar esta accion')->error();
         return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
       }
 
       $this->validate(request(), [
-        'name' => ['required', 'min:20'],
-        'description' => ['required', 'min:50', 'max:250']
+        'fullcontent' => ['required']
       ]);
 
-      $activity = new Activity;
-      $activity->course_id = $course->id;
-      $activity->content_id = $request->content_id;
-      $activity->name = $request->name;
-      //Validar unico slug
-      $slug = str_slug($request->name);
-      $validate = Content::where('slug', $slug)->get();
-      if(count($validate) > 0) {
-          $slug = $slug . '-' . rand(1000,9999);
-      }
-      $activity->slug = $slug;
-      $activity->description = $request->description;
-      $activity->fullcontent = $request->fullcontent;
-      $activity->active = $request->active;
-      $activity->save();
+      $answer = new Answer;
+      $answer->activity_id = $activity->id;
+      $answer->user_id = Auth::user()->id;
+      $answer->attached = $request->attached;
+      $answer->fullcontent = $request->fullcontent;
 
-      flash('Actividad Agregada')->success();
-      return redirect()->action('ActivityController@index', [$grade->slug, $course->slug]);
+      $answer->save();
+
+      flash('Respuesta enviada')->success();
+      return redirect()->action('ActivityController@show', [$grade->slug, $course->slug, $activity->slug]);
 
     }
     public function show($grade, $course, $slug)

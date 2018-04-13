@@ -10,10 +10,16 @@
       @if(Gate::allows('admin-course', $course))
         <p><a href="/g/{{ $activity->course->grade->slug }}/c/{{ $activity->course->slug }}/activities/{{ $activity->slug }}/edit">Editar</a></p>
       @endif
+
+      @if($activity->active)
       {!! $activity->fullcontent !!}
       <hr>
       @if(Gate::allows('use-course', $course))
         @include('partials.aula.answerCreate', ['activity' => $activity])
+      @endif
+      @else
+      <p>{{ $activity->description }}</p>
+      <p class="text-center">Esta actividad aun no esta activa.</p>
       @endif
     </div>
     <div class="col-sm-4">
