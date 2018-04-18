@@ -14,7 +14,9 @@
       @if($activity->active)
       {!! $activity->fullcontent !!}
       <hr>
-      @if(Gate::allows('use-course', $course))
+      @if(Gate::allows('admin-course', $course))
+        @include('partials.aula.answerAdmin', ['activity' => $activity])
+      @elseif(Gate::allows('use-course', $course))
         @include('partials.aula.answerCreate', ['activity' => $activity])
       @endif
       @else

@@ -13,82 +13,70 @@ use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
-    public function index($grade, $course, $activity)
-    {
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      return view('aula.activities.index', compact('course'));
+  public function score($grade, $course, $slug, Request $request)
+  {
+    $grade = Grade::where('slug', $grade)->first();
+    $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+    $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
+    $answer = Answer::where('id', $request->answer_id)->where('activity_id', $activity->id)->first();
+
+    //validar permisos
+    if(!Gate::allows('admin-course', $course)) {
+      flash('No tienes permisos para realizar esta accion')->error();
+      return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
     }
 
-    public function store($grade, $course, $slug, Request $request)
-    {
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
+    $this->validate(request(), [
+      'result' => ['required']
+    ]);
 
-      //validar permisos
-      if(!Gate::allows('use-course', $course)) {
-        flash('No tienes permisos para realizar esta accion')->error();
-        return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
-      }
+    $answer->result = $request->result;
+    $answer->save();
 
-      $this->validate(request(), [
-        'fullcontent' => ['required']
-      ]);
+    flash('Respuesta enviada')->success();
+    return redirect()->action('ActivityController@show', [$grade->slug, $course->slug, $activity->slug]);
+  }
+  public function index($grade, $course, $activity)
+  {
+    $grade = Grade::where('slug', $grade)->first();
+    $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+    return view('aula.activities.index', compact('course'));
+  }
 
-      $answer = new Answer;
-      $answer->activity_id = $activity->id;
-      $answer->user_id = Auth::user()->id;
-      $answer->attached = $request->attached;
-      $answer->fullcontent = $request->fullcontent;
+  public function store($grade, $course, $slug, Request $request)
+  {
+    $grade = Grade::where('slug', $grade)->first();
+    $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+    $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
 
-      $answer->save();
-
-      flash('Respuesta enviada')->success();
-      return redirect()->action('ActivityController@show', [$grade->slug, $course->slug, $activity->slug]);
-
-    }
-    public function show($grade, $course, $slug)
-    {
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
-
-      return view('aula/activities/show', compact('activity', 'course'));
-    }
-    public function edit($grade, $course, $slug)
-    {
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
-
-      return view('aula/activities/edit', compact('activity', 'course'));
+    //validar permisos
+    if(!Gate::allows('use-course', $course)) {
+      flash('No tienes permisos para realizar esta accion')->error();
+      return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
     }
 
-    public function update($grade, $course, $slug, Request $request)
-    {
-      $grade = Grade::where('slug', $grade)->first();
-      $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
-      $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
+    $this->validate(request(), [
+      'fullcontent' => ['required']
+    ]);
 
-      //validar permisos
-      if(!Gate::allows('admin-course', $course)) {
-        flash('No tienes permisos para realizar esta accion')->error();
-        return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
-      }
-      $this->validate(request(), [
-        'name' => ['required', 'min:20'],
-        'description' => ['required', 'min:50', 'max:250']
-      ]);
-      $activity->content_id = $request->content_id;
-      $activity->name = $request->name;
-      $activity->description = $request->description;
-      $activity->fullcontent = $request->fullcontent;
-      $activity->active = $request->active;
-      $activity->save();
+    $answer = new Answer;
+    $answer->activity_id = $activity->id;
+    $answer->user_id = Auth::user()->id;
+    $answer->attached = $request->attached;
+    $answer->fullcontent = $request->fullcontent;
 
-      flash('Actividad Actualizada')->success();
-      return redirect()->action('ActivityController@index', [$grade->slug, $course->slug]);
+    $answer->save();
 
-    }
+    flash('Respuesta enviada')->success();
+    return redirect()->action('ActivityController@show', [$grade->slug, $course->slug, $activity->slug]);
+
+  }
+  public function show($grade, $course, $slug)
+  {
+    $grade = Grade::where('slug', $grade)->first();
+    $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+    $activity = Activity::where('slug', $slug)->where('course_id', $course->id)->first();
+
+    return view('aula/activities/show', compact('activity', 'course'));
+  }
 }
