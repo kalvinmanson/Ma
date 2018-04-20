@@ -35,7 +35,7 @@
       </h5>
       <div class="list-group">
       @foreach($content->topics as $topic)
-      <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" class="list-group-item list-group-item-action">{{ $topic->name }}</a>
+        <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" class="list-group-item list-group-item-action">{{ $topic->name }}</a>
       @endforeach
       </div>
     </div>

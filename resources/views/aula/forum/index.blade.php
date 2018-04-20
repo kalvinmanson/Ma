@@ -5,7 +5,13 @@
 
 @include('partials.aula.courseHeader', ['course' => $course])
 <div class="container py-2">
-  @include('partials.aula.topicCreate', ['course' => $course])
+  <div class="p-3">
+    @if(Gate::allows('use-course', $course))
+      @include('partials.aula.topicCreate', ['course' => $course])
+    @endif
+    <p class="text-muted d-inline p-2">Mediante el foro puedes realizar preguntas y aportar con tus comentarios al crecimiento del curso.</p>
+    <div class="clearfix"></div>
+  </div>
   <table class="table table-striped">
     <tr>
       <th>Tema</th>
@@ -19,7 +25,7 @@
           {{ $topic->name }}
         </a><br>
         <small>
-          Por: {{ $topic->user->name }}
+          <i class="fa fa-user"></i> {{ $topic->user->name }}
           @if($topic->content)
             {{ $topic->content->name }}
           @endif

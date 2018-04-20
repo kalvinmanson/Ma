@@ -1,9 +1,6 @@
-<div class="py-2">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#topicCreate">
-    <i class="fa fa-plus"></i> Nuevo tema
-  </button>
-  <p class="text-muted d-inline p-2">Mediante el foro puedes realizar preguntas y aportar con tus comentarios al crecimiento del curso.</p>
-</div>
+<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#topicCreate">
+  <i class="fa fa-plus"></i> Nuevo tema
+</button>
 
 <div class="modal fade" id="topicCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

@@ -21,8 +21,11 @@
       @endforeach
       <h5 class="d-block bg-secondary p-2 text-white">Temas en los foros</h5>
       <p>Estos son los últimos post publicados en el foro por los estudiantes de este curso.</p>
-      @foreach($topics as $topic)
-
+      @foreach($course->topics->take(5) as $topic)
+        <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" class="list-group-item list-group-item-action">
+          <i class="fa fa-comments"></i> {{ $topic->name }}<br>
+          <small class="text-muted"><i class="fa fa-user"></i> {{ $topic->user->name }}</small>
+        </a>
       @endforeach
     </div>
 
