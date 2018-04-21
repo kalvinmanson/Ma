@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title', 'Foro de '.$course->name.' grado '. $course->grade->name)
+@section('meta-description', 'Consulta los temas, dudas y opiniones disponibles para estudiantes de grado '. $course->grade->name.' en el área de '. $course->name)
+@section('canonical', '/g/'.$course->grade->slug.'/c/'.$course->slug.'/forum')
 @section('content')
 
 

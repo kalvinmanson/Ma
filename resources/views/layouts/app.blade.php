@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"  content="@yield('meta-keywords')">
     <meta name="description"  content="@yield('meta-description')" />
     <meta name="google-site-verification" content="ewO4x0NlUGO9gNkFMxcXPhUPPKHrWKPFbSruverP7tc" />
+    <link rel="canonical" href="@yield('canonical')" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

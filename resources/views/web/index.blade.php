@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title', 'Bienvenido a Drodmin')
-@section('meta-keywords', 'Keywords for seo')
-@section('meta-description', 'Description for SEO')
+@section('title', 'Instituto Moderno Americano Virtual')
+@section('meta-description', 'Cursa tu bachillerato por ciclos de forma virtual en menor tiempo, consulta material educativo de sexto a once en las diferentes areas del conocimiento escolar.')
+@section('canonical', '/')
 @section('content')
 <div class="container">
   @if(Auth::check())
@@ -24,7 +24,7 @@
         <img src="/img/pics/home.jpg" class="img-fluid">
       </div>
       <div class="col-sm-6">
-        <h1 class="title"><span>Bienvenido a, </span>Moderno Americano <span>Virtual y a distancia.</span></h1>
+        <h1 class="title"><span>Bienvenido a, </span>Instituto Moderno Americano <span>Virtual y a distancia.</span></h1>
         <p>La plataforma del Instituto Moderno Americano (IMA) Virtual y a distancia, te permite continuar tus estudios en educación básica y media desde cualquier lugar, apoyate en la comunidad para crear un proyecto de vida profesional y crecer en tu vida.</p>
         <p class="text-center">
           <a href="/login/google" class="btn btn-primary btn-lg"><i class="fa fa-google"></i> Ingresar</a><br>
@@ -36,7 +36,7 @@
     @endif
     <hr>
 
-    <h2 class="text-center title"><span>¿Cómo funciona el</span> Moderno Americano Virtual?</h1>
+    <h2 class="text-center title"><span>¿Cómo funciona el</span> Instituto Moderno Americano <span>Virtual y a Distancia?</span></h1>
     <div class="row">
       <div class="col-sm-5">
         <h4>Foros de discusión</h4>

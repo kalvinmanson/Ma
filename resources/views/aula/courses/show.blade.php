@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title', $course->name.' grado '. $course->grade->name)
+@section('meta-description', $course->description)
+@section('canonical', '/g/'.$course->grade->slug.'/c/'.$course->slug)
 @section('content')
 
 @include('partials.aula.courseHeader', ['course' => $course])

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Contenido | '.$content->name. ' | '.$content->course->name.' grado '.$content->course->grade->name)
+@section('meta-description', $content->description)
+@section('canonical', '/g/'.$course->grade->slug.'/c/'.$course->slug.'/contents/'.$content->slug)
 
 @section('content')
 

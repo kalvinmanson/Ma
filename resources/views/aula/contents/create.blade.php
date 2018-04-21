@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Crear contenido')
 @section('content')
 
 @include('partials.aula.courseHeader', ['course' => $course])
