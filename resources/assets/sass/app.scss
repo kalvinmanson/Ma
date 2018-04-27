@@ -1,5 +1,5 @@
 // Bootstrap
-$blue:    #007bff !default;
+$blue:    #1B4671 !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
@@ -46,7 +46,6 @@ $screen-md-min: 992px;
 $screen-sm-max: ($screen-md-min - 1);
 $screen-lg-min: 1200px;
 $screen-md-max: ($screen-lg-min - 1);
-
 /*
 @media (max-width: $screen-xs-max) { ... }
 @media (min-width: $screen-sm-min) { ... }
@@ -62,4 +61,8 @@ a:hover { text-decoration: none; }
   display: block;
   font-size: 0.8em;
   color: $gray-600;
+}
+
+header {
+  background-color: $blue;
 }

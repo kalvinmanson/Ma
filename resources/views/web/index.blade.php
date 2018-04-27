@@ -3,7 +3,7 @@
 @section('meta-description', 'Cursa tu bachillerato por ciclos de forma virtual en menor tiempo, consulta material educativo de sexto a once en las diferentes areas del conocimiento escolar.')
 @section('canonical', '/')
 @section('content')
-<div class="container">
+<div class="container pt-3">
   @if(Auth::check())
     <div class="row">
     @foreach(Auth::user()->enrollments as $enrollment)
@@ -11,8 +11,8 @@
         <a href="/g/{{ $enrollment->course->grade->slug }}/c/{{ $enrollment->course->slug }}" class="card bg-dark text-white">
           <div class="card-body">
             <img src="{{ $enrollment->course->picture or '/img/no-course-pic.png'}}" class="img-fluid float-left w-25 mr-2">
-            <h5>{{ $enrollment->course->name }}</h5>
-            <small>{{ $enrollment->course->grade->name }}</small>
+            <h5 class="m-0">{{ $enrollment->course->name }}</h5>
+            <small>{{ $enrollment->course->grade->name }} ({{ $enrollment->role }})</small>
           </div>
         </a>
       </div>
