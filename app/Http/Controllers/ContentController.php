@@ -42,8 +42,8 @@ class ContentController extends Controller
       }
 
       $this->validate(request(), [
-        'name' => ['required', 'min:20'],
-        'description' => ['required', 'min:50', 'max:250']
+        'name' => ['required', 'min:10'],
+        'description' => ['required', 'min:10', 'max:250']
       ]);
 
       $content = new Content;
@@ -101,8 +101,8 @@ class ContentController extends Controller
       }
 
       $this->validate(request(), [
-        'name' => ['required', 'min:20'],
-        'description' => ['required', 'min:50', 'max:250']
+        'name' => ['required', 'min:10'],
+        'description' => ['required', 'min:10', 'max:250']
       ]);
 
       $content->name = $request->name;

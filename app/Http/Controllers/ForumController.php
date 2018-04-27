@@ -52,8 +52,8 @@ class ForumController extends Controller
     }
 
     $this->validate(request(), [
-      'name' => ['required', 'min:20'],
-      'fullcontent' => ['required', 'min:50']
+      'name' => ['required', 'min:10'],
+      'fullcontent' => ['required', 'min:20']
     ]);
 
     $topic = new Topic;
@@ -104,8 +104,8 @@ class ForumController extends Controller
       return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
     }
     $this->validate(request(), [
-      'name' => ['required', 'min:20'],
-      'description' => ['required', 'min:50', 'max:250']
+      'name' => ['required', 'min:10'],
+      'description' => ['required', 'min:20', 'max:250']
     ]);
     $activity->content_id = $request->content_id;
     $activity->name = $request->name;

@@ -43,8 +43,8 @@ class ActivityController extends Controller
       }
 
       $this->validate(request(), [
-        'name' => ['required', 'min:20'],
-        'description' => ['required', 'min:50', 'max:250']
+        'name' => ['required', 'min:10'],
+        'description' => ['required', 'min:10', 'max:250']
       ]);
 
       $activity = new Activity;
@@ -96,8 +96,8 @@ class ActivityController extends Controller
         return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
       }
       $this->validate(request(), [
-        'name' => ['required', 'min:20'],
-        'description' => ['required', 'min:50', 'max:250']
+        'name' => ['required', 'min:10'],
+        'description' => ['required', 'min:10', 'max:250']
       ]);
       $activity->content_id = $request->content_id;
       $activity->name = $request->name;
