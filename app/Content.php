@@ -18,4 +18,8 @@ class Content extends Model
   {
       return $this->hasMany('App\Topic');
   }
+  public function votes()
+  {
+      return $this->hasMany('App\Vote');
+  }
 }

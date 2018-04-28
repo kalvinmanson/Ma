@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-2 col-lg-1 text-center">
         <div class="d-none d-sm-inline-block">
-          <img src="{{ $course->picture  or '/img/no-course-pic.png' }}" class="img-fluid pb-3">
+          <img src="{{ $course->picture  or '/img/no-course-pic.png' }}" class="img-fluid pb-3" alt="{{ $course->name }} grado {{ $course->grade->name }}">
         </div>
       </div>
       <div class="col-sm-9 col-lg-10">

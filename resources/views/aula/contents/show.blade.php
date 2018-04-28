@@ -14,6 +14,15 @@
         <p><a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/contents/{{ $content->slug }}/edit">Editar</a></p>
       @endif
       {!! $content->fullcontent !!}
+      <hr>
+      <div class="card">
+        <div class="card-body">
+          <div class="float-right">@include('partials.aula.voteCreate', ['object' => $content, 'content_id' => $content->id])</div>
+          <p>Una vez que termines el contenido califica el mismo para que de esta manera quede marcado como leído en tu historial.  </p>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
     </div>
     <div class="col-sm-4">
       <h5 class="bg-secondary p-2 text-white">
@@ -21,8 +30,8 @@
           <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/activities/create" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Actividad</a>
         @endif
         Actividades
-        <div class="clearfix"></div>
       </h5>
+      <div class="clearfix"></div>
       <div class="list-group">
       @foreach($content->activities as $activity)
         <a href="/g/{{ $activity->course->grade->slug }}/c/{{ $activity->course->slug }}/activities/{{ $activity->slug }}" class="list-group-item list-group-item-action">{{ $activity->name }}</a>
@@ -31,16 +40,23 @@
       <hr>
       <h5 class="bg-secondary p-2 text-white">
         @if(Gate::allows('use-course', $course))
-          <a href="#" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Nuevo tema</a>
+          @include('partials.aula.topicCreate', ['course' => $course, 'content_id' => $content->id])
         @endif
         Temas en el foro
-        <div class="clearfix"></div>
       </h5>
+      <div class="clearfix"></div>
+      @if($content->topics->count() > 0)
       <div class="list-group">
       @foreach($content->topics as $topic)
-        <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" class="list-group-item list-group-item-action">{{ $topic->name }}</a>
+        <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" class="list-group-item list-group-item-action">
+          <strong>{{ $topic->name }}</strong><br>
+          <small><i class="fa fa-user"></i> {{ $topic->user->name }} <i class="fa fa-clock-o"></i> {{ $topic->created_at->diffForHumans() }}</small>
+        </a>
       @endforeach
       </div>
+      @else
+      <p class="text-center text-muted">No hay temas en el foro sobre este contenido.</p>
+      @endif
     </div>
 
   </div>

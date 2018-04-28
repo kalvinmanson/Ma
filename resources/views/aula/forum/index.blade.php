@@ -18,14 +18,16 @@
     <tr>
       <th>Tema</th>
       <th><i class="fa fa-comments-o"></i></th>
-      <th>Fecha</th>
+      <th></th>
     </tr>
     @foreach($topics as $topic)
     <tr>
       <td>
-        <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" title="{{ $topic->name }}">
-          {{ $topic->name }}
-        </a><br>
+        <h3 class="m-0">
+          <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" title="{{ $topic->name }}">
+            {{ $topic->name }}
+          </a>
+        </h3>
         <small>
           <i class="fa fa-user"></i> {{ $topic->user->name }}
           @if($topic->content)
@@ -34,7 +36,7 @@
         </small>
       </td>
       <td>{{ $topic->replies->count() }}</td>
-      <td>Fecha</td>
+      <td>{{ $topic->created_at->diffForHumans() }}</td>
     </tr>
     @endforeach
   </table>

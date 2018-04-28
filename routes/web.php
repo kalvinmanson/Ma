@@ -78,6 +78,9 @@ Route::get('g/{grade}/c/{course}/forum/{slug}', 'ForumController@show')->where('
 // Posts
 Route::post('g/{grade}/c/{course}/post', 'PostController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->middleware('auth');
 
+// Votes
+Route::post('vote', 'VoteController@store')->middleware('auth');
+
 //mis rutas
 Route::get('{category}/{slug}', 'WebController@page')->where('category', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 Route::get('{slug}', 'WebController@category')->where('slug', '[a-z,0-9-]+');

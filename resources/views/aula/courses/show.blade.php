@@ -25,8 +25,11 @@
       <p>Estos son los últimos post publicados en el foro por los estudiantes de este curso.</p>
       @foreach($course->topics->take(5) as $topic)
         <a href="/g/{{ $topic->course->grade->slug }}/c/{{ $topic->course->slug }}/forum/{{ $topic->slug }}" class="list-group-item list-group-item-action">
-          <i class="fa fa-comments"></i> {{ $topic->name }}<br>
-          <small class="text-muted"><i class="fa fa-user"></i> {{ $topic->user->name }}</small>
+          <strong>{{ $topic->name }}</strong><br>
+          @if($topic->content)
+            <small>[{{ $topic->content->name }}]</small><br>
+          @endif
+          <small><i class="fa fa-user"></i> {{ $topic->user->name }} <i class="fa fa-clock-o"></i> {{ $topic->created_at->diffForHumans() }}</small>
         </a>
       @endforeach
     </div>

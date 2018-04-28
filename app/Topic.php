@@ -14,8 +14,16 @@ class Topic extends Model
   {
       return $this->belongsTo('App\Course');
   }
+  public function content()
+  {
+      return $this->belongsTo('App\Content');
+  }
   public function replies()
   {
       return $this->hasMany('App\Reply');
+  }
+  public function votes()
+  {
+      return $this->hasMany('App\Vote');
   }
 }

@@ -10,6 +10,7 @@
     <div class="card mb-3 pb-0">
       <div class="card-body">
         {!! $topic->fullcontent !!}
+        <div class="float-right">@include('partials.aula.voteCreate', ['object' => $topic, 'topic_id' => $topic->id])</div>
         <p class="text-muted"><i class="fa fa-user"></i> {{ $topic->user->name }} | <i class="fa fa-clock-o"></i> {{ $topic->created_at }}</p>
       </div>
     </div>
@@ -17,6 +18,7 @@
     <div class="card mb-3">
       <div class="card-body pb-0">
         {!! $reply->fullcontent !!}
+        <div class="float-right">@include('partials.aula.voteCreate', ['object' => $reply, 'reply_id' => $reply->id])</div>
         <p class="text-muted"><i class="fa fa-user"></i> {{ $reply->user->name }} | <i class="fa fa-clock-o"></i> {{ $reply->created_at }}</p>
       </div>
     </div>

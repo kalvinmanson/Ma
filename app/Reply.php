@@ -14,4 +14,8 @@ class Reply extends Model
   {
       return $this->belongsTo('App\Topic');
   }
+  public function votes()
+  {
+      return $this->hasMany('App\Vote');
+  }
 }
