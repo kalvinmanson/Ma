@@ -27,7 +27,11 @@ class Course extends Model
       return $this->hasMany('App\Topic');
   }
   public function replies()
+  {
+      return $this->hasManyThrough('App\Reply', 'App\Topic');
+  }
+  public function questions()
     {
-        return $this->hasManyThrough('App\Reply', 'App\Topic');
+        return $this->hasManyThrough('App\Question', 'App\Content');
     }
 }

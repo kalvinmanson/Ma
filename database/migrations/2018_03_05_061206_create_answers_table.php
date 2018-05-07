@@ -20,6 +20,7 @@ class CreateAnswersTable extends Migration
             $table->string('attached')->nullable();
             $table->text('fullcontent')->nullable();
             $table->float('result')->nullable();
+            $table->text('feedback')->nullable();
             $table->float('questions_result')->nullable();
             $table->timestamps();
         });

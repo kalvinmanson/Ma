@@ -31,6 +31,7 @@ class AnswerController extends Controller
     ]);
 
     $answer->result = $request->result;
+    $answer->feedback = $request->feedback;
     $answer->save();
 
     flash('Respuesta enviada')->success();

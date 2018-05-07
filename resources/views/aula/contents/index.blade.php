@@ -15,7 +15,7 @@
       </div>
     @endif
     @foreach($course->contents as $content)
-    <div class="col-md-6 col-lg-4">
+    <div class="col-md-6 col-lg-4 mb-2">
       <div class="card">
         <img class="card-img-top" src="{{ $content->picture }}" alt="{{ $content->name }}">
         <div class="card-body">

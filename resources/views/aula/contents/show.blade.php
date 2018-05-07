@@ -27,11 +27,28 @@
     <div class="col-sm-4">
       <h5 class="bg-secondary p-2 text-white">
         @if(Gate::allows('admin-course', $course))
-          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/activities/create" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Actividad</a>
+          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/questions/create?content_id={{ $content->id }}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Pregunta</a>
+        @endif
+        Desafíos
+      </h5>
+      <p class="text-muted text-center">
+        Actualmente hay {{ $content->questions->count() }} preguntas de desafío para "{{ $content->name }}".
+      </p>
+      @if($content->questions->count() > 0)
+      <p class="text-center">
+        <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/questions" class="btn btn-danger">
+          Realizar el desafío <i class="fa fa-angle-right"></i>
+        </a>
+      </p>
+
+      @endif
+
+      <h5 class="bg-secondary p-2 text-white">
+        @if(Gate::allows('admin-course', $course))
+          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/activities/create?content_id={{ $content->id }}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Actividad</a>
         @endif
         Actividades
       </h5>
-      <div class="clearfix"></div>
       <div class="list-group">
       @foreach($content->activities as $activity)
         <a href="/g/{{ $activity->course->grade->slug }}/c/{{ $activity->course->slug }}/activities/{{ $activity->slug }}" class="list-group-item list-group-item-action">{{ $activity->name }}</a>

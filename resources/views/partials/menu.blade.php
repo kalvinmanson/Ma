@@ -28,6 +28,9 @@
         </li>
         @else
         <li class="nav-item">
+          <a class="nav-link" href="/explore">Explorar</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/login/google">Iniciar sesión</a>
         </li>
         @endif

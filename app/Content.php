@@ -22,4 +22,8 @@ class Content extends Model
   {
       return $this->hasMany('App\Vote');
   }
+  public function questions()
+  {
+      return $this->hasMany('App\Question');
+  }
 }

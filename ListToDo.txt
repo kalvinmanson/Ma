@@ -15,7 +15,11 @@ Register *
 Editar Contents *
 Editar Activities (campos) *
 Responder Activities *
-Calificar Activities
-Forum
+Calificar Activities (Campo feedback)
+Forum *
 Preguntas
 SEO
+Profiles
+Lang
+Fechas
+-Explorar

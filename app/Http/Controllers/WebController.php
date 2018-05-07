@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use App\Category;
 use App\Page;
+use App\Grade;
+use App\Content;
+use App\Topic;
+use App\Activity;
 
 use Illuminate\Http\Request;
 
@@ -10,7 +14,14 @@ class WebController extends Controller
 {
     public function index()
     {
-        return view('web.index');
+      return view('web.index');
+    }
+    public function explore() {
+      $grades = Grade::all();
+      $last_contents = Content::orderBy('created_at', 'desc')->limit(5)->get();
+      $last_topics = Topic::orderBy('created_at', 'desc')->limit(5)->get();
+      $last_activities = Activity::orderBy('created_at', 'desc')->limit(5)->get();
+      return view('web.explore', compact('grades', 'last_contents', 'last_topics', 'last_activities'));
     }
     public function category($slug)
     {

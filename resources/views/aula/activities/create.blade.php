@@ -14,7 +14,7 @@
         <label for="content_id">Contenido al que pertenece</label>
         <select name="content_id" id="content_id" class="form-control">
           @foreach($course->contents as $content)
-          <option value="{{ $content->id }}">{{ $content->name }}</option>
+          <option value="{{ $content->id }}" {{ $content_id == $content->id ? 'selected' : '' }}>{{ $content->name }}</option>
           @endforeach
         </select>
       </div>

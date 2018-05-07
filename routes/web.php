@@ -39,6 +39,7 @@ Route::get('/admin', function() {
 });
 
 Route::get('/', 'WebController@index');
+Route::get('/explore', 'WebController@explore');
 
 Route::post('/contact', 'ContactController@store');
 
@@ -64,6 +65,18 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('g/{grade}/c/{course}/activities', 'ActivityController@index')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
 Route::get('g/{grade}/c/{course}/activities/{slug}', 'ActivityController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+
+//Activities
+Route::middleware('auth')->group(function () {
+  Route::post('g/{grade}/c/{course}/questions', 'QuestionController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
+  Route::get('g/{grade}/c/{course}/questions/create', 'QuestionController@create')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
+  Route::get('g/{grade}/c/{course}/questions/{slug}/edit', 'QuestionController@edit')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+  Route::post('g/{grade}/c/{course}/questions/{slug}', 'QuestionController@update')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+  Route::post('g/{grade}/c/{course}/questions/{slug}/answer', 'QuestionController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+  Route::get('g/{grade}/c/{course}/questions', 'QuestionController@index')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
+  Route::get('g/{grade}/c/{course}/questions/{slug}', 'QuestionController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+});
+
 
 //forum
 Route::middleware('auth')->group(function () {
