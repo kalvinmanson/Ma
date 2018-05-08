@@ -8,6 +8,7 @@ use App\Enrollment;
 use App\Course;
 use App\Grade;
 use Auth;
+use Hash;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
@@ -17,6 +18,26 @@ class UserController extends Controller
       if(!$this->hasrole('Admin')) { return redirect('/'); }
     	$users = User::all();
     	return view('admin.users.index', compact('users'));
+    }
+
+    public function store(Request $request) {
+      if(!$this->hasrole('Admin')) { return redirect('/'); }
+      $this->validate(request(), [
+        'name' => ['required', 'max:150'],
+        'username' => ['required', 'unique:users', 'max:100'],
+        'password' => ['required', 'max:100'],
+        'email' => ['required', 'unique:users']
+      ]);
+
+      $user = new User;
+      $user->name = $reques->name;
+      $user->username = $reques->username;
+      $user->email = $reques->email;
+      $user->password = Hash::make($request->password);
+      $user->grade = Grade::first();
+      $user->save();
+      flash('Record created')->success();
+      return redirect()->action('Admin\UserController@index');
     }
 
     public function edit($id) {

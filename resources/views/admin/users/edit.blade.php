@@ -15,7 +15,7 @@
                     <label for="domain">Role</label>
                     <select name="role" id="role" class="form-control">
                         <option value="Admin" {{ $user->role == "Admin" ? 'selected' : '' }}>Admin</option>
-                            <option value="Teacher" {{ $user->role == "Teacher" ? 'selected' : '' }}>Teacher</option>
+                        <option value="Teacher" {{ $user->role == "Teacher" ? 'selected' : '' }}>Teacher</option>
                         <option value="User" {{ $user->role == "User" ? 'selected' : '' }}>User</option>
                     </select>
                 </div>
