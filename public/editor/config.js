@@ -8,7 +8,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	config.allowedContent = true;
-	config.extraPlugins = 'codemirror';
+	config.extraPlugins = 'codemirror,ckeditor_wiris';
 	config.filebrowserBrowseUrl = '/editor/kcfinder/browse.php?opener=ckeditor&type=images';
 	config.filebrowserImageBrowseUrl = '/editor/kcfinder/browse.php?opener=ckeditor&type=images';
 	config.filebrowserFlashBrowseUrl = '/editor/kcfinder/browse.php?opener=ckeditor&type=images';
