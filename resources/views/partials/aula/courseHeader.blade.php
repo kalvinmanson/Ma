@@ -16,8 +16,8 @@
       <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/contents">Contenidos</a>
       <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/activities">Actividades</a>
       <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/forum">Foro</a>
-      <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/members">Miembros</a>
-      <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/questions">Desafío</a>
+      {{--<a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/members">Miembros</a>
+      <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/questions">Desafío</a>--}}
     </nav>
   </div>
 </div>
