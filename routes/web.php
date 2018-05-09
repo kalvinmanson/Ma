@@ -40,6 +40,7 @@ Route::get('/admin', function() {
 
 Route::get('/', 'WebController@index');
 Route::get('/explore', 'WebController@explore');
+Route::get('/sitemap.xml', 'WebController@sitemap');
 
 Route::post('/contact', 'ContactController@store');
 

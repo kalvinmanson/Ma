@@ -16,6 +16,14 @@ class WebController extends Controller
     {
       return view('web.index');
     }
+    public function sitemap() {
+      $grades = Grade::all();
+      $contents = Content::all();
+      $activities = Activity::all();
+      $topics = Topic::all();
+      return response()->view('web.sitemap', compact('grades', 'contents', 'activities', 'topics'), 200)
+      ->header('Content-Type', 'text/xml');
+    }
     public function explore() {
       $grades = Grade::all();
       $last_contents = Content::orderBy('created_at', 'desc')->limit(5)->get();
