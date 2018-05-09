@@ -21,7 +21,9 @@
   @else
     <div class="row">
       <div class="col-sm-6">
-        <img src="/img/pics/home.jpg" class="img-fluid">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7LA9siyUUck?rel=0" allowfullscreen></iframe>
+        </div>
       </div>
       <div class="col-sm-6">
         <h1 class="title"><span>Bienvenido a, </span>Instituto Moderno Americano <span>Virtual y a distancia.</span></h1>
