@@ -8,10 +8,12 @@
 <div class="container py-2">
   <div class="row">
     <div class="col-md-7">
-      <h5 class="d-block bg-secondary p-2 text-white">Contenidos del curso</h5>
-      @foreach($course->contents as $content)
-        @include('partials.aula.contentList', ['content' => $content])
-      @endforeach
+      <h5 class="d-block bg-primary p-2 text-white">Contenidos del curso</h5>
+      <ul class="list-group">
+        @foreach($course->contents as $content)
+          @include('partials.aula.contentList', ['content' => $content])
+        @endforeach
+      </ul>
     </div>
     <div class="col-md-5">
       <h5 class="d-block bg-secondary p-2 text-white">Noticias y novedades</h5>
