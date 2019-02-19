@@ -1,0 +1,1 @@
+{"result":{"text":"fracción 3 entre 4 menos raíz cuadrada de 5 espacio fin raíz más inclinada fracción 3 entre 5"},"status":"ok"}

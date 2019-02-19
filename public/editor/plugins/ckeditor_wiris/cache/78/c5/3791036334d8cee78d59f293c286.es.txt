@@ -1,0 +1,1 @@
+{"result":{"text":"fracción 4 entre 5 igual fracción 8 entre 10 coma espacio p o r q u e espacio 4 multiplicación en cruz 10 igual 5 multiplicación en cruz 8"},"status":"ok"}

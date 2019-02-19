@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 22px abrir paréntesis fracción a entre b cerrar paréntesis elevado a n por abrir paréntesis fracción c entre d cerrar paréntesis elevado a n espacio igual espacio abrir paréntesis fracción numerador a por c entre denominador b por d fin fracción cerrar paréntesis elevado a n fin estilo"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cuarta de 81 espacio igual espacio 3 espacio espacio espacio p o r q u e espacio espacio espacio 3 elevado a 4 espacio igual espacio 81"},"status":"ok"}

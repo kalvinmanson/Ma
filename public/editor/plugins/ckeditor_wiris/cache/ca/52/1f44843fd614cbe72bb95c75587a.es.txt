@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 26px fracción 4 entre 5 igual fracción 8 entre 10 coma espacio p o r q u e espacio espacio 4 multiplicación en cruz 10 espacio igual espacio 5 multiplicación en cruz 8\n40 espacio igual espacio 40 fin estilo"},"status":"ok"}

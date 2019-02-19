@@ -1,0 +1,1 @@
+{"result":{"text":"menos 6 x espacio igual espacio 12"},"status":"ok"}

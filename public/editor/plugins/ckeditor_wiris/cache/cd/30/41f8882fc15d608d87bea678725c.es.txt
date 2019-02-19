@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cuadrada de 25"},"status":"ok"}

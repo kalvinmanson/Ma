@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 36px raíz n-ésima de b espacio igual espacio fino a fin estilo"},"status":"ok"}

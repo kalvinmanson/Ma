@@ -1,0 +1,1 @@
+{"result":{"text":"raíz n-ésima de a igual espacio espacio b"},"status":"ok"}

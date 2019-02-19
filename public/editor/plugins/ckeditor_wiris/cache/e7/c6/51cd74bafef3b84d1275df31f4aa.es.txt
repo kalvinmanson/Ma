@@ -1,0 +1,1 @@
+{"result":{"text":"paréntesis izquierdo menos 10 paréntesis derecho 3 espacio más espacio paréntesis izquierdo menos 5 al cuadrado paréntesis derecho espacio menos espacio paréntesis izquierdo menos 4 paréntesis derecho espacio más espacio 7"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"abrir paréntesis fracción a entre b cerrar paréntesis elevado a 0 igual espacio 1"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cuadrada de 121 espacio igual espacio fino 11 espacio espacio espacio p o r q u e espacio espacio espacio 11 al cuadrado espacio igual espacio 121"},"status":"ok"}

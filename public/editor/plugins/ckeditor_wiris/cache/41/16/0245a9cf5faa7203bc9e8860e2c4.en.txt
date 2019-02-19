@@ -1,0 +1,1 @@
+{"result":{"text":"begin mathsize 36px style a to the power of n space equals thin space b end style"},"status":"ok"}

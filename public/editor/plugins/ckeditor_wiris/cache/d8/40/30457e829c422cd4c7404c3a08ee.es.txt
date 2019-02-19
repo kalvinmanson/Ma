@@ -1,0 +1,1 @@
+{"result":{"text":"raíz quinta de 43"},"status":"ok"}

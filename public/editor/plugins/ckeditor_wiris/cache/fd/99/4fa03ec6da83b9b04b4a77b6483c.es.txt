@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cúbica de menos 8 fin raíz espacio igual espacio menos 2 espacio espacio espacio p o r q u e espacio paréntesis izquierdo menos 2 paréntesis derecho al cubo espacio igual espacio menos 8"},"status":"ok"}

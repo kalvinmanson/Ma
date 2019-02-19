@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 18px a paréntesis derecho espacio espacio espacio espacio fracción 4 entre 5 espacio y espacio fracción 5 entre 4 espacio s o n espacio i n v e r s o s coma espacio p o r q u e espacio fracción 4 entre 5 multiplicación en cruz fracción 5 entre 4 igual fracción 20 entre 20 igual fracción 1 entre 1 igual 1 fin estilo"},"status":"ok"}

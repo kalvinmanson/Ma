@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 22px abrir corchetes abrir paréntesis fracción a entre b cerrar paréntesis elevado a m cerrar corchetes elevado a n espacio igual espacio abrir paréntesis fracción a entre b cerrar paréntesis elevado a m por n fin elevado fin estilo"},"status":"ok"}

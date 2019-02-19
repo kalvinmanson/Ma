@@ -1,0 +1,1 @@
+{"result":{"text":"12 dividido por 3 igual 4 espacio espacio espacio y lógico espacio espacio espacio 30 dividido por 3 igual 10"},"status":"ok"}

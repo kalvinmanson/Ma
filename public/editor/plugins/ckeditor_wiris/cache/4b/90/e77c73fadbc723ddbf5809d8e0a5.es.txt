@@ -1,0 +1,1 @@
+{"result":{"text":"5 espacio multiplicación en cruz espacio 3 espacio igual espacio 15 espacio espacio y lógico espacio 7 espacio multiplicación en cruz 2 espacio igual espacio 14"},"status":"ok"}

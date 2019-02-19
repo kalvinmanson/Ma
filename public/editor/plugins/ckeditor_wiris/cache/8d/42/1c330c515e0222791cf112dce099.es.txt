@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 72px a elevado a n espacio igual espacio b fin estilo"},"status":"ok"}

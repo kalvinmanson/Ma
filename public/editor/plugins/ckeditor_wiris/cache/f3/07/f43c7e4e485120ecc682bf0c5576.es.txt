@@ -1,0 +1,1 @@
+{"result":{"text":"fracción a entre b mayor que fracción c entre d espacio S í espacio y espacio s ó l o espacio s i espacio a d mayor que b c"},"status":"ok"}

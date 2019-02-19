@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 22px abrir paréntesis fracción 3 entre 5 cerrar paréntesis al cubo por abrir paréntesis fracción 2 entre 7 cerrar paréntesis al cubo espacio igual espacio abrir paréntesis fracción 6 entre 35 cerrar paréntesis al cubo fin estilo"},"status":"ok"}

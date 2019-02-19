@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 22px abrir paréntesis fracción a entre b cerrar paréntesis elevado a 1 igual espacio fracción a entre b fin estilo"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cúbica de 35 menos raíz cuadrada de 3"},"status":"ok"}

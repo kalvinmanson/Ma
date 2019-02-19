@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cúbica de 27 espacio igual espacio 3 coma espacio p o r q u e espacio 3 al cubo espacio igual espacio 27"},"status":"ok"}

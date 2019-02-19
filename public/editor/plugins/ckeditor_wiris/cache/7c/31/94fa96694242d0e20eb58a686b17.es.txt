@@ -1,0 +1,1 @@
+{"result":{"text":"E n espacio fracción 5 entre 8 punto y coma espacio l a espacio f r a c c i ó n espacio s e espacio d i v i d i ó espacio e n espacio 8 espacio p a r t e s espacio i g u a l e s espacio y espacio s e espacio t o m a r o n espacio 5"},"status":"ok"}

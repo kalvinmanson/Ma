@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cuadrada de 4 menos fracción 2 entre 3"},"status":"ok"}

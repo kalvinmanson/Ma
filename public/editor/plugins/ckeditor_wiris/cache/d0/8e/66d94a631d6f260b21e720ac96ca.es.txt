@@ -1,0 +1,1 @@
+{"result":{"text":"fracción 3 entre 4 multiplicación en cruz raíz cuadrada de 5"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 22px fracción 5 entre 6 más fracción 11 entre 6 igual fracción numerador 5 más 11 entre denominador 6 fin fracción igual fracción 16 entre 6 igual fracción 8 entre 3 espacio espacio espacio abrir paréntesis s e espacio s i m p l i f i c ó espacio p o r espacio 2 cerrar paréntesis fin estilo"},"status":"ok"}

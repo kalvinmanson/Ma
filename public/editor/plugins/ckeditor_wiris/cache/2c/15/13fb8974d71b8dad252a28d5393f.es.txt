@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 26px normal números racionales espacio igual espacio abrir llaves fracción p entre q espacio barra vertical espacio p espacio y lógico espacio q espacio pertenece espacio normal números enteros cerrar llaves fin estilo"},"status":"ok"}

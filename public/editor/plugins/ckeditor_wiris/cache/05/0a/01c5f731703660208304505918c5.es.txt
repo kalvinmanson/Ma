@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cuadrada de 25 espacio igual espacio más-menos 5 espacio espacio espacio p o r q u e espacio espacio espacio 5 al cuadrado espacio igual espacio 25 espacio espacio espacio y espacio t a m b i é n espacio espacio espacio paréntesis izquierdo menos 5 paréntesis derecho al cuadrado espacio igual espacio 25"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"raíz con índice blanco y radical blanco"},"status":"ok"}

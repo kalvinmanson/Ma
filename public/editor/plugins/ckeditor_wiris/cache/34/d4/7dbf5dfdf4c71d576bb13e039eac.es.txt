@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 18px fracción 3 entre 4 mayor que fracción 5 entre 7 espacio p o r q u e espacio 3 multiplicación en cruz 7 mayor que 4 multiplicación en cruz 5\n21 mayor que 20 fin estilo"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"a paréntesis derecho espacio menos 1 medio espacio espacio espacio espacio b paréntesis derecho espacio fracción 3 entre 4 espacio espacio espacio espacio c paréntesis derecho espacio fracción 27 entre 4 espacio espacio espacio espacio d paréntesis derecho espacio menos fracción 53 entre 9"},"status":"ok"}

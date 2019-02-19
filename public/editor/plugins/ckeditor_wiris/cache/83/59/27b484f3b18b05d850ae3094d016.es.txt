@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 18px fracción a entre b igual fracción c entre d espacio espacio espacio espacio espacio espacio fracción d entre c igual fracción b entre a fin estilo"},"status":"ok"}

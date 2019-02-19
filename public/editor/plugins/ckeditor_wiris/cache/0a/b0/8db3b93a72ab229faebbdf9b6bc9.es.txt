@@ -1,0 +1,1 @@
+{"result":{"text":"raíz cuadrada de 64 espacio espacio espacio N o espacio e x i s t e espacio p o r q u e espacio 8 al cuadrado espacio igual espacio 64 espacio y espacio paréntesis izquierdo menos 8 paréntesis derecho al cuadrado espacio igual espacio 64"},"status":"ok"}

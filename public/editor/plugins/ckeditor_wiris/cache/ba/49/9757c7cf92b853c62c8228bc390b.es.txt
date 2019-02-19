@@ -1,0 +1,1 @@
+{"result":{"text":"estilo tamaño 22px abrir paréntesis guión corto fracción 7 entre 9 cerrar paréntesis elevado a 1 espacio igual espacio abrir paréntesis guión corto fracción 7 entre 9 cerrar paréntesis fin estilo"},"status":"ok"}
