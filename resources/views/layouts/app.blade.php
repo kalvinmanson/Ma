@@ -34,47 +34,30 @@
 
 </head>
 <body>
-  <div class="bmd-layout-container bmd-drawer-f-l">
+  <div class="bmd-layout-container bmd-drawer-f-l fullHeight">
     <header class="bmd-layout-header">
       <div class="navbar navbar-light bg-faded">
         <button class="navbar-toggler" type="button" data-toggle="drawer" data-target="#dw-s1">
           <span class="sr-only">Toggle drawer</span>
-          <i class="material-icons">menu</i>
+          <i class="fas fa-bars text-white"></i>
         </button>
         <ul class="nav navbar-nav">
-          <li class="nav-item">Title</li>
+          <li class="nav-item text-white">Moderno Americano</li>
         </ul>
       </div>
     </header>
     <div id="dw-s1" class="bmd-layout-drawer bg-faded">
-      <header>
-        <a class="navbar-brand">Title</a>
-      </header>
-      <ul class="list-group">
-        <a class="list-group-item">Link 1</a>
-        <a class="list-group-item">Link 2</a>
-        <a class="list-group-item">Link 3</a>
-      </ul>
+      @include('partials.menu')
     </div>
     <main class="bmd-layout-content">
-      <div class="container">
-        <p>Main content</p>
-      </div>
+      @include('flash::message')
+      @include('partials.errors')
+
+      @yield('content')
+
+      <p class="text-secondary text-center">&copy; 2019 By <a href="//droni.co">Droni.co</a></p>
     </main>
   </div>
-    <header>
-      @include('partials.menu')
-    </header>
-    <div class="container">
-        @include('flash::message')
-        @include('partials.errors')
-    </div>
-    @yield('content')
-    <footer>
-      <div class="container">
-          <p>&copy; 2019 By <a href="//droni.co">Droni.co</a></p>
-      </div>
-    </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
