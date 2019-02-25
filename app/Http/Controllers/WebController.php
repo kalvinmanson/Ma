@@ -14,7 +14,8 @@ class WebController extends Controller
 {
     public function index()
     {
-      return view('web.index');
+      $home = Page::where('slug', 'home')->first();
+      return view('web.index', compact('home'));
     }
     public function sitemap() {
       $grades = Grade::all();
@@ -25,7 +26,7 @@ class WebController extends Controller
       ->header('Content-Type', 'text/xml');
     }
     public function explore() {
-      $grades = Grade::all();
+      $grades = Grade::has('courses')->get();
       $last_contents = Content::orderBy('created_at', 'desc')->limit(5)->get();
       $last_topics = Topic::orderBy('created_at', 'desc')->limit(5)->get();
       $last_activities = Activity::orderBy('created_at', 'desc')->limit(5)->get();

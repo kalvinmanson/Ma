@@ -6,12 +6,12 @@
 @section('content')
 
 @include('partials.aula.courseHeader', ['course' => $course])
-<div class="container py-2">
+<div class="container-fluid py-2">
   <h1 class="bg-secondary p-2 text-white">{{ $content->name }}</h1>
   <div class="row">
     <div class="col-sm-8">
       @if(Gate::allows('admin-course', $course))
-        <p><a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/contents/{{ $content->slug }}/edit">Editar</a></p>
+        <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/contents/{{ $content->slug }}/edit" class="btn btn-primary float-right btn-raised">Editar</a>
       @endif
       {!! $content->fullcontent !!}
       <hr>
@@ -27,7 +27,7 @@
     <div class="col-sm-4">
       <h5 class="bg-secondary p-2 text-white">
         @if(Gate::allows('admin-course', $course))
-          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/questions/create?content_id={{ $content->id }}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Pregunta</a>
+          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/questions/create?content_id={{ $content->id }}" class="btn btn-primary btn-sm btn-raised float-right"><i class="fa fa-plus"></i> Pregunta</a>
         @endif
         Desafíos
       </h5>
@@ -45,7 +45,7 @@
 
       <h5 class="bg-secondary p-2 text-white">
         @if(Gate::allows('admin-course', $course))
-          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/activities/create?content_id={{ $content->id }}" class="btn btn-primary btn-sm float-right"><i class="fa fa-plus"></i> Actividad</a>
+          <a href="/g/{{ $content->course->grade->slug }}/c/{{ $content->course->slug }}/activities/create?content_id={{ $content->id }}" class="btn btn-primary btn-sm btn-raised float-right"><i class="fa fa-plus"></i> Actividad</a>
         @endif
         Actividades
       </h5>

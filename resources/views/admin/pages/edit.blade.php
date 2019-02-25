@@ -51,10 +51,10 @@
                     <textarea class="form-control" id="description" name="description" placeholder="Describe your page">{{ old('description') ? old('description') : $page->description }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea name="content" id="content" class="form-control">{{ old('content') ? old('content') : $page->content }}</textarea>
+                    <label for="fullcontent">Content</label>
+                    <textarea name="fullcontent" id="fullcontent" class="form-control">{{ old('fullcontent') ? old('fullcontent') : $page->fullcontent }}</textarea>
                     <script type="text/javascript">
-                        var editor = CKEDITOR.replace('content');
+                        var editor = CKEDITOR.replace('fullcontent');
                     </script>
                 </div>
                 <div class="form-group">

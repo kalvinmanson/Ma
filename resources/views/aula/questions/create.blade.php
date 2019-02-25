@@ -4,7 +4,7 @@
 
 @include('partials.aula.courseHeader', ['course' => $course])
 
-<div class="container">
+<div class="container-fluid">
   <h1 class="title">Crear pregunta para desafío</h1>
   <form method="POST" action="{{ url('/g/'.$course->grade->slug.'/c/'.$course->slug.'/questions') }}">
   {{ csrf_field() }}

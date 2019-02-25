@@ -2,7 +2,24 @@
   <a class="navbar-brand" href="/"><img src="/img/logo-ima.png" class="w-50" alt="Instituto Moderno Americano"></a>
 </header>
 <ul class="list-group">
-  <ul class="navbar-nav ml-auto">
+  @if(Auth::check())
+    <div class="card">
+      <div class="card-body py-0">
+        <img src="{{ Auth::user()->avatar }}" class="float-left mr-2">
+        <p>
+          <strong>{{ Auth::user()->name }}</strong><br>
+          <small>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <i class="fa fa-power-off"></i> Cerrar Sesión</a>
+          </small>
+        </p>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+      </div>
+    </div>
+  @endif
+  <ul class="navbar-nav">
     @if(Auth::check())
       @if(Auth::user()->grade)
           @foreach(Auth::user()->enrollments as $menuEnrollment)
@@ -12,14 +29,9 @@
             </a>
           @endforeach
       @endif
-    <li class="list-group-item">
-      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Salir</a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          {{ csrf_field() }}
-      </form>
-    </li>
+
     @else
-    <a class="list-group-item" href="/explore">Explorar</a>
     <a class="list-group-item" href="/login/google">Iniciar sesión</a>
     @endif
+    <a class="list-group-item" href="/explore">Explorar Cursos</a>
 </ul>

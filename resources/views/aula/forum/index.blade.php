@@ -6,7 +6,7 @@
 
 
 @include('partials.aula.courseHeader', ['course' => $course])
-<div class="container py-2">
+<div class="container-fluid py-2">
   <div class="p-3">
     @if(Gate::allows('use-course', $course))
       @include('partials.aula.topicCreate', ['course' => $course])

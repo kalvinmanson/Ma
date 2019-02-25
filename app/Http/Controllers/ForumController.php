@@ -46,7 +46,7 @@ class ForumController extends Controller
     $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
 
     //validar permisos
-    if(!Gate::allows('admin-course', $course)) {
+    if(!Gate::allows('use-course', $course)) {
       flash('No tienes permisos para realizar esta accion')->error();
       return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
     }
@@ -116,5 +116,38 @@ class ForumController extends Controller
 
     flash('Actividad Actualizada')->success();
     return redirect()->action('ActivityController@index', [$grade->slug, $course->slug]);
+  }
+  public function destroy($grade, $course, $slug) {
+    $grade = Grade::where('slug', $grade)->first();
+    $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+    $topic = Topic::where('slug', $slug)->where('course_id', $course->id)->first();
+
+    //validar permisos
+    if(!Gate::allows('admin-course', $course)) {
+      flash('No tienes permisos para realizar esta accion')->error();
+      return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
+    }
+    if($topic->replies->count() > 0) {
+      flash('No se puede borrar porque tiene respuestas asociadas.')->error();
+      return redirect()->route('topicShow', [$grade->slug, $course->slug, $topic->slug]);
+    }
+    $topic->delete();
+    flash('El tema ha sido eliminado')->success();
+    return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
+  }
+  public function destroyReply($grade, $course, $slug, $id) {
+    $grade = Grade::where('slug', $grade)->first();
+    $course = Course::where('slug', $course)->where('grade_id', $grade->id)->first();
+    $topic = Topic::where('slug', $slug)->where('course_id', $course->id)->first();
+    $reply = Reply::where('id', $id)->where('topic_id', $topic->id)->first();
+
+    //validar permisos
+    if(!Gate::allows('admin-course', $course)) {
+      flash('No tienes permisos para realizar esta accion')->error();
+      return redirect()->action('CourseController@show', [$grade->slug, $course->slug]);
+    }
+    $reply->delete();
+    flash('El mensaje ha sido eliminado')->success();
+    return redirect()->route('topicShow', [$grade->slug, $course->slug, $topic->slug]);
   }
 }

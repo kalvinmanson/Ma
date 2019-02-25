@@ -3,7 +3,7 @@
 @section('meta-description', 'Cursa tu bachillerato por ciclos de forma virtual en menor tiempo, consulta material educativo de sexto a once en las diferentes areas del conocimiento escolar.')
 @section('canonical', '/')
 @section('content')
-<div class="container pt-3">
+<div class="container-fluid pt-3">
   @if(Auth::check())
     <div class="row">
     @foreach(Auth::user()->enrollments as $enrollment)
@@ -37,23 +37,16 @@
     </div>
     @endif
     <hr>
-
-    <h2 class="text-center title"><span>¿Cómo funciona el</span> Instituto Moderno Americano <span>Virtual y a Distancia?</span></h1>
+    @if($home)
+    <h1 class="text-center title">{{ $home->name }}</h1>
     <div class="row">
       <div class="col-sm-5">
-        <h4>Foros de discusión</h4>
-        <p>Cada asignatura cuenta con un foro abierto en el que puedes conocer a tus compañeros y construir con ellos nuevo conocimiento en torno a los temas tratados en clase, si tienes una duda puedes publicarla y así aportar a la resolución de preguntas que son útiles para toda la comunidad.</p>
-
-        <h4>Chats y clases en vivo</h4>
-        <p>Comparte de clases en video en vivo apoyadas con tecnologías como HangOuts de Google para que puedas participar en tiempo real de los contenidos de la asignatura pero también teniéndolos disponibles en diferido.</p>
-
-        <h4>Temas y actividades</h4>
-        <p>Los contenidos de las asignaturas te darán un camino organizado vinculando los temas directamente con actividades que refuercen tus conocimientos, pero tu puedes crear y compartir tu ruta de aprendizaje a tu gusto.</p>
-
+         {!! $home->fullcontent !!}
       </div>
       <div class="col-sm-7">
-        <img src="/img/pics/home01.jpeg" class="img-fluid">
+        <img src="{{ $home->picture }}" class="img-fluid">
       </div>
     </div>
+    @endif
 </div>
 @endsection

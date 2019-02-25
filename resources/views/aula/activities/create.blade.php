@@ -4,7 +4,7 @@
 
 @include('partials.aula.courseHeader', ['course' => $course])
 
-<div class="container">
+<div class="container-fluid">
   <h1 class="title">Crear Actividad</h1>
   <form method="POST" action="{{ url('/g/'.$course->grade->slug.'/c/'.$course->slug.'/activities') }}">
   {{ csrf_field() }}
@@ -46,7 +46,7 @@
     </script>
   </div>
 
-  <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Crear nueva actividad</button>
+  <button type="submit" class="btn btn-primary btn-raised"><i class="fa fa-save"></i> Crear nueva actividad</button>
 
   </form>
 </div>

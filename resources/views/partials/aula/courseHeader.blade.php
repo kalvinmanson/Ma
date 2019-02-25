@@ -1,5 +1,5 @@
 <div class="bg-dark text-white">
-  <div class="container pt-2 pt-lg-4">
+  <div class="container-fluid pt-2 pt-lg-4">
     <div class="row">
       <div class="col-sm-2 col-lg-1 text-center">
         <div class="d-none d-sm-inline-block">
@@ -11,8 +11,8 @@
         <p>{{ $course->description }}</p>
       </div>
     </div>
-    <nav class="nav nav-pills nav-fill bg-light">
-      <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}">Portada</a>
+    <nav class="nav bg-light justify-content-center">
+      <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}"><i class="fas fa-tachometer-alt"></i></a>
       <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/contents">Contenidos</a>
       <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/activities">Actividades</a>
       <a class="nav-item nav-link" href="/g/{{ $course->grade->slug }}/c/{{ $course->slug }}/forum">Foro</a>

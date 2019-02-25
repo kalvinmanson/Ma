@@ -43,7 +43,7 @@ class LoginController extends Controller
 
     public function redirectToProvider()
     {
-        return Socialite::driver('google')->with(['hd' => 'ma.edu.co'])->redirect();
+        return Socialite::driver('google')->redirect();
     }
     public function handleProviderCallback()
     {
@@ -64,7 +64,7 @@ class LoginController extends Controller
             $loginUser = new User;
             $loginUser->email = $user->email;
             $loginUser->name = $user->name;
-            $loginUser->username = str_slug($user->name, '-');
+            $loginUser->username = str_slug($user->name, '.').rand(10,99);
             $loginUser->avatar = $user->avatar;
             $loginUser->password = Hash::make(str_random(8));
         }

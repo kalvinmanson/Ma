@@ -5,7 +5,7 @@
 @section('content')
 
 @include('partials.aula.courseHeader', ['course' => $course])
-<div class="container py-2">
+<div class="container-fluid py-2">
   <div class="list-group">
   @foreach($course->questions as $question)
   <a href="/g/{{ $question->content->course->grade->slug }}/c/{{ $question->content->course->slug }}/questions/{{ $question->slug }}" class="list-group-item list-group-item-action flex-column align-items-start">

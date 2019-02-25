@@ -5,7 +5,7 @@
 @section('content')
 
 @include('partials.aula.courseHeader', ['course' => $course])
-<div class="container py-2">
+<div class="container-fluid py-2">
   <h1 class="bg-secondary p-2 text-white">{{ $activity->name }}</h1>
   <div class="row">
     <div class="col-sm-8">

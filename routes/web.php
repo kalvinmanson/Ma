@@ -87,7 +87,9 @@ Route::middleware('auth')->group(function () {
   Route::post('g/{grade}/c/{course}/forum/{slug}/reply', 'ForumController@reply')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
 });
 Route::get('g/{grade}/c/{course}/forum', 'ForumController@index')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+');
-Route::get('g/{grade}/c/{course}/forum/{slug}', 'ForumController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+');
+Route::get('g/{grade}/c/{course}/forum/{slug}', 'ForumController@show')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+')->name('topicShow');
+Route::delete('g/{grade}/c/{course}/forum/{slug}', 'ForumController@destroy')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+')->name('topicDestroy');
+Route::delete('g/{grade}/c/{course}/forum/{slug}/{reply}', 'ForumController@destroyReply')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->where('slug', '[a-z,0-9-]+')->name('replyDestroy');
 
 // Posts
 Route::post('g/{grade}/c/{course}/post', 'PostController@store')->where('grade', '[a-z,0-9-]+')->where('course', '[a-z,0-9-]+')->middleware('auth');

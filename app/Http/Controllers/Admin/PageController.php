@@ -72,7 +72,7 @@ class PageController extends Controller
         $page->slug = $request->slug;
         $page->picture = $request->picture;
         $page->description = $request->description;
-        $page->content = $request->content;
+        $page->fullcontent = $request->fullcontent;
         $page->weight = $request->weight;
         $page->save();
 
